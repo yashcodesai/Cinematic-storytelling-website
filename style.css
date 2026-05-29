@@ -1,0 +1,666 @@
+/* ==================================================
+   THE LAST SIGNAL - VERSION 2
+   CINEMATIC STORYTELLING WEBSITE
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+    font-family:'Syne',sans-serif;
+    min-height:100vh;
+}
+
+/* ==================================================
+   GLOBAL SPACE UNIVERSE
+================================================== */
+
+.space-universe{
+
+    position:fixed;
+    inset:0;
+
+    z-index:-20;
+
+    background:
+    radial-gradient(circle at center,
+    #081120 0%,
+    #020617 50%,
+    #000000 100%);
+}
+
+/* STARS */
+
+.space-universe::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.18;
+}
+
+/* NEBULAS */
+
+.nebula{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-15;
+
+    pointer-events:none;
+}
+
+.nebula-1{
+
+    width:700px;
+    height:700px;
+
+    background:#00ffff;
+
+    top:-200px;
+    left:-200px;
+
+    opacity:.10;
+}
+
+.nebula-2{
+
+    width:900px;
+    height:900px;
+
+    background:#8b5cf6;
+
+    right:-300px;
+    top:20%;
+
+    opacity:.08;
+}
+
+.nebula-3{
+
+    width:800px;
+    height:800px;
+
+    background:#ff0055;
+
+    bottom:-250px;
+    left:20%;
+
+    opacity:.06;
+}
+
+/* ==================================================
+   NOISE
+================================================== */
+
+.noise{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    opacity:.04;
+
+    background-image:
+        radial-gradient(
+        rgba(255,255,255,.2) 1px,
+        transparent 1px);
+
+    background-size:4px 4px;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 5vw;
+}
+
+.hero-glow{
+
+    width:900px;
+    height:900px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    background:
+        radial-gradient(circle,
+        rgba(0,255,255,.15),
+        transparent);
+
+    filter:blur(100px);
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:10;
+}
+
+.hero-label{
+
+    color:#00ffff;
+
+    letter-spacing:10px;
+
+    margin-bottom:30px;
+
+    font-size:.9rem;
+}
+
+.hero-title{
+
+    font-family:'Anton',sans-serif;
+
+    font-size:12vw;
+
+    line-height:.85;
+}
+
+.hero-title span{
+
+    display:block;
+
+    color:#00ffff;
+
+    text-shadow:
+        0 0 20px cyan,
+        0 0 60px cyan,
+        0 0 120px cyan;
+}
+
+.hero-description{
+
+    max-width:800px;
+
+    margin:auto;
+
+    margin-top:40px;
+
+    color:#cbd5e1;
+
+    font-size:1.3rem;
+
+    line-height:2;
+}
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    letter-spacing:8px;
+
+    color:#94a3b8;
+}
+
+/* ==================================================
+   CHAPTERS
+================================================== */
+
+.chapter{
+
+    min-height:120vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:8vw;
+
+    overflow:hidden;
+}
+
+.chapter-content{
+
+    max-width:900px;
+
+    position:relative;
+
+    z-index:20;
+
+    backdrop-filter:blur(12px);
+
+    background:
+        rgba(255,255,255,.03);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    box-shadow:
+        0 0 50px rgba(0,0,0,.3);
+}
+
+.chapter-content.right{
+
+    margin-left:auto;
+
+    text-align:right;
+}
+
+.chapter-content.center{
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.chapter-label{
+
+    color:#00ffff;
+
+    letter-spacing:10px;
+
+    margin-bottom:20px;
+
+    font-size:.8rem;
+}
+
+.chapter-title{
+
+    font-family:'Anton',sans-serif;
+
+    font-size:7vw;
+
+    line-height:.9;
+
+    margin-bottom:35px;
+
+    text-shadow:
+        0 0 30px rgba(255,255,255,.1);
+}
+
+.chapter-text{
+
+    font-size:1.25rem;
+
+    line-height:2.2;
+
+    color:#d1d5db;
+}
+
+/* ==================================================
+   MASSIVE SECTION
+================================================== */
+
+.massive-section{
+
+    height:180vh;
+
+    position:relative;
+}
+
+.massive-text{
+
+    position:sticky;
+
+    top:0;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    font-family:'Anton',sans-serif;
+
+    font-size:12vw;
+
+    line-height:.9;
+
+    padding:0 5vw;
+}
+
+/* ==================================================
+   SIGNAL CORE
+================================================== */
+
+.signal-core{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+        cyan,
+        transparent);
+
+    opacity:.35;
+
+    filter:blur(30px);
+}
+
+/* ==================================================
+   ENTITIES
+================================================== */
+
+.entity{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+}
+
+.entity-cyan{
+
+    width:500px;
+    height:500px;
+
+    background:cyan;
+
+    opacity:.18;
+}
+
+.entity-purple{
+
+    width:600px;
+    height:600px;
+
+    background:#8b5cf6;
+
+    opacity:.12;
+}
+
+.entity-red{
+
+    width:700px;
+    height:700px;
+
+    background:#ff0055;
+
+    opacity:.12;
+}
+
+.entity-final{
+
+    width:900px;
+    height:900px;
+
+    background:#00ffff;
+
+    opacity:.08;
+}
+
+/* ==================================================
+   SIGNAL RINGS
+================================================== */
+
+.rings{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(0,255,255,.2);
+}
+
+.rings::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:70px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(0,255,255,.15);
+}
+
+.rings::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:140px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(0,255,255,.10);
+}
+
+.large{
+
+    width:1000px;
+    height:1000px;
+}
+
+/* ==================================================
+   EYE
+================================================== */
+
+.eye{
+
+    position:absolute;
+
+    width:600px;
+    height:250px;
+
+    border-radius:50%;
+
+    border:2px solid #ff0055;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 0 40px #ff0055,
+        0 0 100px #ff0055;
+}
+
+.eye-inner{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#ff0055;
+
+    box-shadow:
+        0 0 40px #ff0055,
+        0 0 100px #ff0055;
+}
+
+/* ==================================================
+   GRID
+================================================== */
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        linear-gradient(
+        rgba(255,255,255,.04) 1px,
+        transparent 1px),
+
+        linear-gradient(
+        90deg,
+        rgba(255,255,255,.04) 1px,
+        transparent 1px);
+
+    background-size:80px 80px;
+}
+
+/* ==================================================
+   FINAL SECTION
+================================================== */
+
+.final-section{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 5vw;
+}
+
+.final-title{
+
+    font-family:'Anton',sans-serif;
+
+    font-size:9vw;
+
+    line-height:.9;
+}
+
+.final-sub{
+
+    margin-top:30px;
+
+    font-size:2rem;
+
+    color:#00ffff;
+
+    letter-spacing:6px;
+}
+
+.pulse{
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    margin-top:50px;
+}
+
+/* ==================================================
+   DESKTOP ENHANCEMENT
+================================================== */
+
+@media(min-width:1600px){
+
+    .chapter-title{
+        font-size:6vw;
+    }
+
+    .hero-title{
+        font-size:10vw;
+    }
+
+    .chapter-text{
+        font-size:1.4rem;
+    }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:1024px){
+
+    .chapter-title{
+        font-size:11vw;
+    }
+
+    .chapter-content{
+        padding:40px;
+    }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:768px){
+
+    .hero-title{
+        font-size:22vw;
+    }
+
+    .chapter-title{
+        font-size:16vw;
+    }
+
+    .chapter-content{
+        padding:30px;
+    }
+
+    .chapter-text{
+        font-size:1rem;
+    }
+
+    .massive-text{
+        font-size:18vw;
+    }
+
+    .final-title{
+        font-size:15vw;
+    }
+
+    .final-sub{
+        font-size:1.2rem;
+    }
+}
